@@ -40,7 +40,7 @@ import processing.core.PImage;
 public class WheresWaldo extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 400;
-
+    
     PImage waldo;
 
     @Override
@@ -50,12 +50,28 @@ public class WheresWaldo extends PApplet {
 
     @Override
     public void setup() {
-        
+    waldo = loadImage("waldo.jpg");
+    waldo.resize(600,400);
+    
     }
 
     @Override
     public void draw() {
-        
+    	background(waldo);
+    	
+    	
+    	if(mousePressed) {
+    		System.out.println(mouseX);
+    		System.out.println(mouseY);
+    		if(mouseX>378 && mouseX<418 && mouseY>207 && mouseY<277) {
+    			playWhoohoo();
+    		}
+    		else {
+    			playDoh();
+    		}
+    		
+    		//check if it is 382,373
+    	}
     }
 
     static public void main(String[] args) {
